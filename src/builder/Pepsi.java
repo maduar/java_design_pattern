@@ -2,12 +2,12 @@ package builder;
 
 public class Pepsi extends ColdDrink{
 
-	@override
+	@Override
 	public float price() {
 		return 35.0f;
 	}
 	
-	@override
+	@Override
 	public String name() {
 		return "Pepsi";
 	}

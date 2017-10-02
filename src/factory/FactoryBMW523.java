@@ -1,7 +1,7 @@
 package factory;
 
 public class FactoryBMW523 implements FactoryBMW{
-	@override
+	@Override
 	public BMW523 createBMW() {
 		return new BMW523();
 	}

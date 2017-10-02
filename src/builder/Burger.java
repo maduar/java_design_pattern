@@ -2,11 +2,11 @@ package builder;
 
 public abstract class Burger implements Item{
 
-	@override
+	@Override
 	public Packing packing() {
 		return new Wrapper();
 	}
 	
-	@override
+	@Override
 	public abstract float price();
 }

@@ -2,12 +2,12 @@ package builder;
 
 public class VerBurger extends Burger{
 	
-	@override
+	@Override
 	public float price() {
 		return 25.0f;
 	}
 	
-	@override
+	@Override
 	public String name() {
 		return "Ver Burbge";
 	}
