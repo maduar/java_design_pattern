@@ -6,3 +6,4 @@ public class SignletonPatternDemo {
 		obj.showMessage();
 	}
 }
+
