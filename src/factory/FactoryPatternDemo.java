@@ -17,9 +17,13 @@ public class FactoryPatternDemo {
         shape2.draw();
 
         //获取 Square 的对象，并调用它的 draw 方法
-        Shape shape3 = shapeFactory.getShape("SQUARE");
-
+        Shape shape3 = shapeFactory.getShape("TESTRECTANGLE");
+        if (shape3 == null) {
+            System.out.println("TestRectangle is not exists");
+        } else {
+            shape3.draw();
+        }
         //调用 Square 的 draw 方法
-        shape3.draw();
+
     }
 }

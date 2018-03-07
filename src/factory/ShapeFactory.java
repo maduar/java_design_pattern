@@ -7,22 +7,19 @@ public class ShapeFactory  {
             return null;
         }
 
-        boolean sign = false;
-        for(ShapeEnum se: ShapeEnum.values()) {
-            if(se.toString().equals(shapeType)) {
-                sign = true;
-            }
-        }
-
-        if (!sign) {
+        // 判断shapeType名称是否存在于枚举类中
+        String clazzStr = ShapeEnum.hasShapeEnum(shapeType);
+        if ("".equals(clazzStr)) {
             return null;
         }
 
-        String clazStr = this.getFirstWordUpper(shapeType);
-        String name = ShapeFactory.class.getPackage().getName().toString() + "." + clazStr;
+        // 当前包名
+        String packagePath = getPackagePath(this.getClass());
+        // 类所在路径
+        String classPath = packagePath + "." + clazzStr;
 
         try {
-            Class t = Class.forName(name);
+            Class t = Class.forName(classPath);
             return (Shape)t.newInstance();
         } catch (Exception e) {
             e.printStackTrace();
@@ -31,17 +28,7 @@ public class ShapeFactory  {
 
     }
 
-    public String getFirstWordUpper(String str) {
-        String result = "";
-
-        if("".equals(str) || str == null) {
-            return result;
-        }
-
-        String lowerStr = str.toUpperCase();
-        char t = lowerStr.charAt(0);
-        result = t + lowerStr.substring(1).toLowerCase();
-
-        return result;
+    public static String getPackagePath(Class z) {
+        return z.getPackage().getName().toString();
     }
 }
