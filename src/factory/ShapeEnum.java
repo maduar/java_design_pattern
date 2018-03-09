@@ -1,7 +1,6 @@
 package factory;
 
 public enum ShapeEnum {
-//    CIRCLE("CIRCLE"), RECTANGLE("RECTANGLE"), SQUARE("SQUARE");
     CIRCLE("Circle"), RECTANGLE("Rectangle"), SQUARE("Square"), RECTANGLE2("Rectangle2"), TESTRECTANGLE("TestRectangle");
 
     private String classname;
@@ -10,18 +9,15 @@ public enum ShapeEnum {
         this.classname = classname;
     }
     public static String hasShapeEnum(String str) {
-        String result = "";
         for(ShapeEnum se: ShapeEnum.values()) {
             if(se.toString().equals(str)) {
-                result = se.getClassname();
+                return se.getClassname();
             }
         }
-        return result;
+        return "";
     }
 
     public String getClassname() {
         return classname;
     }
-
-
 }
