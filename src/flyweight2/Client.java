@@ -9,6 +9,7 @@
 package flyweight2;
 
 public class Client {
+
   public static void main(String[] args) {
 
     FlyweightFactory factory = new FlyweightFactory();
@@ -22,4 +23,25 @@ public class Client {
     fly = factory.factory(new Character('c'));
     fly.operation("Third Call");
   }
+
+  /**
+   *
+   *  @param just say hi
+   */
+  public void javaCode1(String str){
+
+    System.out.println("这是一句话 :"+str);
+
+  }
+
+  /**
+   *
+   *  @return something string
+   */
+  public String getSentence(){
+    String Sentence = "hehe";
+    return Sentence;
+
+  }
+
 }
